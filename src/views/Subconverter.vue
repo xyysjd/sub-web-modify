@@ -895,7 +895,7 @@ export default {
         sourceSubUrl: "",
         clientType: "",
         customBackend: this.getUrlParam() == "" ? "https://sub.lzjss.eu.org" : this.getUrlParam(),
-        shortType: "https://beikui109.cf/short",
+        shortType: "https://dlj.lzjss.eu.org/short",
         remoteConfig: "https://raw.githubusercontent.com/xyysjd/ClashRule/main/GeneralClashRule.ini",
         excludeRemarks: "",
         includeRemarks: "",
