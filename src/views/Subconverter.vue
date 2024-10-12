@@ -4,14 +4,6 @@
       <el-col>
         <el-card>
           <div slot="header">
-            <svg-icon class="gayhub" icon-class="github" style="float:left" @click="goToProject"/>
-            <svg-icon class="dianbao" icon-class="telegram" style="float:left;margin-left: 10px"
-                      @click="gotoTgChannel"/>
-            <svg-icon class="bilibili" icon-class="bilibili" style="float:right;margin-left:10px"
-                      @click="gotoBiliBili"/>
-            <svg-icon class="youguan" icon-class="youtube" style="float:right;margin-left:10px" @click="gotoYouTuBe"/>
-            <svg-icon class="channel" icon-class="telegram" style="float:right;margin-left: 10px"
-                      @click="gotoTgChannel"/>
             <div style="text-align:center;font-size:15px">订 阅 转 换</div>
           </div>
           <el-container>
@@ -216,7 +208,7 @@
                   </el-button>
                 </el-input>
               </el-form-item>
-              <el-form-item label-width="0px" style="margin-top: 40px; text-align: center">
+              <el-form-item label-width="0px" style="margin-top: 80px; text-align: center">
                 <el-button
                     style="width: 120px"
                     type="danger"
@@ -234,31 +226,6 @@
                 </el-button>
               </el-form-item>
               <el-form-item label-width="0px" style="text-align: center">
-                <el-button
-                    style="width: 120px"
-                    type="primary"
-                    @click="dialogUploadConfigVisible = true"
-                    icon="el-icon-upload"
-                    :loading="loading2"
-                >自定义配置
-                </el-button>
-                <el-button
-                    style="width: 120px"
-                    type="primary"
-                    @click="dialogLoadConfigVisible = true"
-                    icon="el-icon-copy-document"
-                    :loading="loading3"
-                >从URL解析
-                </el-button>
-              </el-form-item>
-              <el-form-item label-width="0px" style="text-align: center">
-                <el-button
-                    style="width: 250px;"
-                    type="success"
-                    icon="el-icon-video-play"
-                    @click="centerDialogVisible = true"
-                >视频教程
-                </el-button>
               </el-form-item>
             </el-form>
           </el-container>
@@ -467,7 +434,7 @@ export default {
           "自动判断客户端": "auto",
         },
         shortTypes: {
-	  "自用": "https://dlj.lzjss.eu.org/short",
+	  "自用短链": "https://dlj.lzjss.eu.org/short",
           "v1.mk": "https://v1.mk/short",
           "d1.mk": "https://d1.mk/short",
           "dlj.tf": "https://dlj.tf/short",
@@ -477,24 +444,16 @@ export default {
         customBackend: {
           "自用后端": "https://sub.lzjss.eu.org",
           "本地后端": "http://127.0.0.1:25500",		
-          "肥羊增强型后端【vless+hysteria】": "https://api.v1.mk",
-          "肥羊备用后端【vless+hysteria】": "https://sub.d1.mk",
-          "つつ-多地防失联【负载均衡+国内优化】": "https://api.tsutsu.one",
-          nameless13提供: "https://www.nameless13.com",
+          "肥羊增强型后端": "https://api.v1.mk",
           subconverter作者提供: "https://sub.xeton.dev",
           "sub-web作者提供": "https://api.wcc.best",
-          "sub作者&lhie1提供": "https://api.dler.io",
         },
         backendOptions: [
 		  {value: "https://sub.lzjss.eu.org"},
           {value: "http://127.0.0.1:25500"},
           {value: "https://api.v1.mk"},
-          {value: "https://sub.d1.mk"},
-          {value: "https://api.tsutsu.one"},
-          {value: "https://www.nameless13.com"},
           {value: "https://sub.xeton.dev"},
           {value: "https://api.wcc.best"},
-          {value: "https://api.dler.io"},
         ],
         remoteConfig: [
           {
@@ -1409,7 +1368,7 @@ export default {
             a ? this.$message.success(`${this.backendVersion}` + "肥羊负载均衡增强版后端，已屏蔽免费节点池（会返回403），额外支持vless+hysteria订阅转换") : b ? this.$message.success(`${this.backendVersion}` + "本地局域网自建版后端") : this.$message.success(`${this.backendVersion}` + "官方原版后端不支持vless/hysteria订阅转换");
           })
           .catch(() => {
-            this.$message.error("请求SubConverter版本号返回数据失败，该后端不可用！");
+
           });
     }
   }
